@@ -31,11 +31,11 @@ browser->app: Provide app with relevant data
 
 app->bank: Fetch page 
 bank->app: Deliver page
+app->payer: Display payment app
 note right payer
    Authentication scenarios will vary and strong auth is optional
 end note
 group Authentication
-  app->payer: Prompt for credentials
   payer->app: Provide credentials (possibly biometric)
   app->bank: Forward authentication data
   bank->app: Return authentication status
