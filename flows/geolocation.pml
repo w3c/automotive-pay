@@ -9,7 +9,7 @@ participant "Payer Browser" as browser
 participant "Payment App" as app
 participant "Payer's Bank" as bank
 
-title BLE-Initiated Service Station Payment
+title Location-based (Mobile/Care) Initiation
 
 == Broadcast of Available Service ==
 
