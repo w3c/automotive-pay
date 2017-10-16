@@ -31,6 +31,9 @@ browser->app: Provide app with relevant data
 
 app->bank: Fetch page 
 bank->app: Deliver page
+note right payer
+   Authentication scenarios will vary and strong auth is optional
+end note
 opt
   app->payer: Prompt for credentials
   payer->app: Provide credentials (possibly biometric)
