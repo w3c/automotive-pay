@@ -31,10 +31,10 @@ alt Payer Interaction with Third Party Payment App
   app->bank: Fetch page 
   bank->app: Deliver page
   app->payer: Display payment app
-  note right payer
-     Authentication scenarios will vary and strong auth is optional
-  end note
   alt Authentication
+    note right payer
+     Authentication scenarios will vary and strong auth is optional
+    end note
     payer->app: Provide credentials (possibly biometric)
     app->bank: Forward authentication data
     bank->app: Return authentication status
