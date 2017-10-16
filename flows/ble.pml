@@ -14,38 +14,39 @@ title BLE-Initiated Service Station Payment
 == Device Interaction with User to Open Web Page==
 
 pump->phone: Offer URL via BLE
-phone->payer: Display Offer for Payer Selection
-payer->browser: Payer Selection opens Brower
-browser->server: Browser fetches Service Station page
-server->browser: Server delivers page for Payer Interaction
+phone->payer: Display offer for payer selection
+payer->browser: Open browser on selected URL
+browser->server: Fetch service station page
+server->browser: Deliver page for Payer Interaction
+browser->payer: Display service station page
 
 ==  Payment Initiation ==
 
-payer->browser: Pushes "Buy" button, calling Payment Request API
+payer->browser: Push "Buy" button, calling Payment Request API
 browser->payer: Display matching payment apps (possibly including browser)
 payer->brower: Select payment app
 browser->app: Provide app with relevant data
 
 == Interaction with Payment App == 
 
-app->bank: Fetch page from Bank Server
-bank->app: Bank delivers page for Payer Interaction
-app->payer: App prompts Payer for credentials
-payer->app: User provides credentials (possibly biometric)
-app->bank: App communicates with bank who authenticates Payer
-bank->app: Bank returns results of authentication
-app->payer: User interacts further with app to confirm payment
+app->bank: Fetch page 
+bank->app: Deliver page for Payer Interaction
+app->payer: Prompt Payer for credentials
+payer->app: Provide credentials (possibly biometric)
+app->bank: Communicate with bank to get authentication
+bank->app: Return authentication status
+app->payer: Interact and confirm payment
 
 == Response to Service Station ==
 
-app->browser: App returns response information to browser
-browser->server: Browser returns response information to Station server
+app->browser: Return response (via Payment Handler API)
+browser->server: Return response (via Payment Request API)
 
 == Activation of Device ==
 
-server->pump: Station activates pump
-pump->payer: Pump signals availability to Payer
-payer->pump: User activates pump
-pump->payer: Pump provides receipt to Payer
+server->pump: Activate pump
+pump->payer: Signal availability
+payer->pump: Use pump
+pump->payer: Provide receipt
 
 @enduml
