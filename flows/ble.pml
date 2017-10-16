@@ -30,12 +30,12 @@ browser->app: Provide app with relevant data
 == Payer Interaction with Payment App == 
 
 app->bank: Fetch page 
-bank->app: Deliver page for Payer Interaction
-app->payer: Prompt Payer for credentials
+bank->app: Deliver page
+app->payer: Prompt for credentials
 payer->app: Provide credentials (possibly biometric)
-app->bank: Communicate with bank to get authentication
+app->bank: Forward authentication data
 bank->app: Return authentication status
-app->payer: Interact and confirm payment
+payer->app: Interact and confirm payment
 
 == Response to Service Station ==
 
