@@ -32,7 +32,12 @@ payer->browser: Select payment app
 
 alt Payer Interaction with Third Party Payment App 
   browser->app: Provide app with relevant data
-  app->bank: Fetch app 
+  app->bank: Fetch app
+  note right app
+      To enhance security, geolocation or other data might enable Payer's bank
+      (or other service) to perform risk management regarding advertised
+      service.
+  end note
   bank->app: Deliver app
   app->payer: Display app
   alt Authentication
