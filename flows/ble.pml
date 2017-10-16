@@ -15,7 +15,7 @@ title BLE-Initiated Service Station Payment
 
 pump->phone: Offer URL via BLE
 phone->payer: Display offer for payer selection
-payer->browser: Launch browser
+payer->browser: Select offer, launching browser
 browser->server: Fetch service station page
 server->browser: Deliver page
 browser->payer: Display page
@@ -31,10 +31,12 @@ browser->app: Provide app with relevant data
 
 app->bank: Fetch page 
 bank->app: Deliver page
-app->payer: Prompt for credentials
-payer->app: Provide credentials (possibly biometric)
-app->bank: Forward authentication data
-bank->app: Return authentication status
+opt
+  app->payer: Prompt for credentials
+  payer->app: Provide credentials (possibly biometric)
+  app->bank: Forward authentication data
+  bank->app: Return authentication status
+end
 payer->app: Interact and confirm payment
 
 == Response to Service Station ==
