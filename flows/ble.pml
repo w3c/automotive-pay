@@ -49,9 +49,9 @@ browser->server: Return response (via Payment Request API)
 
 == Activation of Device ==
 
-server->pump: Activate pump
+server->pump: Activate
 pump->payer: Signal availability
-payer->pump: Use pump
+payer->pump: Get fuel
 pump->payer: Provide receipt
 
 @enduml
