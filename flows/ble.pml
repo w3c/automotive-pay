@@ -19,6 +19,10 @@ payer->browser: Select offer, launching browser
 browser->server: Fetch service station page
 server->browser: Deliver page
 browser->payer: Display page
+note right payer
+     User could log into merchant server for loyalty programs,
+     including via strong authentication (WebAuthn)
+end note
 
 ==  Payment Initiation ==
 
@@ -35,7 +39,7 @@ alt Payer Interaction with Third Party Payment App
     note right payer
      Authentication scenarios will vary and strong auth is optional
     end note
-    payer->app: Provide credentials (possibly biometric)
+    payer->app: Provide credentials (e.g., biometric via WebAuthn)
     app->bank: Forward authentication data
     bank->app: Return authentication status
   end
@@ -43,12 +47,8 @@ alt Payer Interaction with Third Party Payment App
   app->browser: Return response (via Payment Handler API)
 end
 
-== Response to Service Station ==
-
-browser->server: Return response (via Payment Request API)
-
 == Activation of Device ==
-
+browser->server: Return response (via Payment Request API)
 server->pump: Activate
 pump->payer: Signal availability
 payer->pump: Get fuel
