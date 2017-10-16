@@ -21,7 +21,9 @@ server->browser: Deliver page
 browser->payer: Display page
 note right payer
      User could log into merchant server for loyalty programs,
-     including via strong authentication (WebAuthn)
+     including via strong authentication (WebAuthn). Station
+     could also send information to fuel device (e.g., one-time pin)
+     for enhanced security.
 end note
 
 ==  Payment Initiation ==
