@@ -34,7 +34,7 @@ bank->app: Deliver page
 note right payer
    Authentication scenarios will vary and strong auth is optional
 end note
-opt
+group Authentication
   app->payer: Prompt for credentials
   payer->app: Provide credentials (possibly biometric)
   app->bank: Forward authentication data
