@@ -28,9 +28,9 @@ payer->browser: Select payment app
 
 alt Payer Interaction with Third Party Payment App 
   browser->app: Provide app with relevant data
-  app->bank: Fetch page 
-  bank->app: Deliver page
-  app->payer: Display payment app
+  app->bank: Fetch app 
+  bank->app: Deliver app
+  app->payer: Display app
   alt Authentication
     note right payer
      Authentication scenarios will vary and strong auth is optional
@@ -39,7 +39,7 @@ alt Payer Interaction with Third Party Payment App
     app->bank: Forward authentication data
     bank->app: Return authentication status
   end
-  payer->app: Interact and confirm payment
+  payer->app: Finalize transaction
   app->browser: Return response (via Payment Handler API)
 end
 
