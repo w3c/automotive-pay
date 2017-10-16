@@ -2,8 +2,8 @@
 !includeurl https://raw.githubusercontent.com/w3c/webpayments-flows/gh-pages/PaymentFlows/skin.ipml
 
 Participant "Station Web Server" as server
-Participant "Fueling Device" as pump
-participant "Payer Device" as phone
+Participant "Fuel Device" as pump
+participant "Payer Mobile" as phone
 Actor "Payer" as payer
 participant "Payer Browser" as browser
 participant "Payment App" as app
@@ -11,23 +11,23 @@ participant "Payer's Bank" as bank
 
 title BLE-Initiated Service Station Payment
 
-== Device Interaction with User to Open Web Page==
+== Broadcast of Available Service ==
 
 pump->phone: Offer URL via BLE
 phone->payer: Display offer for payer selection
-payer->browser: Open browser on selected URL
+payer->browser: Launch browser
 browser->server: Fetch service station page
-server->browser: Deliver page for Payer Interaction
-browser->payer: Display service station page
+server->browser: Deliver page
+browser->payer: Display page
 
 ==  Payment Initiation ==
 
 payer->browser: Push "Buy" button, calling Payment Request API
 browser->payer: Display matching payment apps (possibly including browser)
-payer->brower: Select payment app
+payer->browser: Select payment app
 browser->app: Provide app with relevant data
 
-== Interaction with Payment App == 
+== Payer Interaction with Payment App == 
 
 app->bank: Fetch page 
 bank->app: Deliver page for Payer Interaction
