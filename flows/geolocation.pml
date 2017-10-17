@@ -9,7 +9,7 @@ participant "Payer Browser" as browser
 participant "Payment App" as app
 participant "Payer's Bank" as bank
 
-title User Device Initiation based on Location
+title Initiation based on user device location
 
 == Broadcast of Available Service ==
 
