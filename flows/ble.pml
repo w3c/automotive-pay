@@ -61,7 +61,7 @@ end
 == Activation of Device ==
 browser->server: Return response (via Payment Request API)
 server->pump: Activate
-pump->payer: Signal availability
+pump->payer: Indicate availability
 payer->pump: Get fuel
 pump->payer: Provide receipt
 
