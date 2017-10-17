@@ -14,10 +14,9 @@ title Local Service Station Device Initiated Payment
 == Broadcast of Available Service ==
 
 pump->phone: Offer URL via BLE
-
-alt Various input methods
+note right pump
     NFC, QR Codes, or other URL-announcing input methods could be used.
-end    
+end note
 
 phone->payer: Display offer for payer selection
 payer->browser: Select offer, launching browser
