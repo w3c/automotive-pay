@@ -9,7 +9,7 @@ participant "Payer Browser" as browser
 participant "Payment App" as app
 participant "Payer's Bank" as bank
 
-title Local Service Station Device Initiated Payment
+title Local Service Station Device Initiation
 
 == Broadcast of Available Service ==
 

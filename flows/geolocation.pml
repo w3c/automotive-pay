@@ -9,11 +9,11 @@ participant "Payer Browser" as browser
 participant "Payment App" as app
 participant "Payer's Bank" as bank
 
-title Location-based (Mobile/Care) Initiation
+title User Device Initiation based on Location
 
 == Broadcast of Available Service ==
 
-phone->payer: Display location-based offer for payer selection (push notification)
+phone->payer: Display location-based offer for payer selection (e.g., via push notification)
 payer->browser: Select offer, launching browser
 browser->server: Fetch service station page
 server->browser: Deliver page
